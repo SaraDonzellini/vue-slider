@@ -46,16 +46,20 @@ createApp({
         },
         sameSlide(){
             
-            
         },
+        pauseSlide(){
+
+        }
     },
     created(){
-        setInterval(() => {
+        const clock = setInterval(() => {
             this.activeIndex++;
             if (this.activeIndex >= this.slides.length){
                 this.activeIndex = 0;
             }
         }, 3000);
+
+
     }
 
 

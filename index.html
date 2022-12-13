@@ -17,7 +17,7 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img :src="slides[activeIndex].image" alt="slider">
+                    <img :src="slides[activeIndex].image" alt="slider" @mouseover="pauseSlide()">
                     <div class="text">
                         <h3>{{ slides[activeIndex].title }}</h3>
                         <p>
