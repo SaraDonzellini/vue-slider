@@ -53,12 +53,7 @@ createApp({
 
         },
         startSlider(){
-            this.interval = setInterval(() => {
-                this.activeIndex++;
-                if (this.activeIndex >= this.slides.length){
-                    this.activeIndex = 0;
-                }
-            }, 3000);
+            this.interval = setInterval(() => this.nextSlide(), 3000)
         }
     },
     created(){
