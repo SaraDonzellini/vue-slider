@@ -50,14 +50,13 @@ body {
 
 .thumb img {
     width: 100%;
-    height: calc((300px) / 5 - 0.2rem);
+    height: 100%;
     object-fit: cover;
 }
 
 .active {
     border: 2px solid #ccc;
     opacity: 1;
-    filter: brightness(150%);
 }
 
 .prev, .next {
