@@ -18,24 +18,20 @@
 
                 <div class="item">
                     <img :src="slides[activeIndex].image" alt="slider">
-                    <!-- <img src="img/01.webp" alt="Spiderman" />
                     <div class="text">
-                        <h3>Spiderman</h3>
+                        <h3>{{ slides[activeIndex].title }}</h3>
                         <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
+                            {{ slides[activeIndex].text }}
                         </p>
-                    </div> -->
+                    </div>
                 </div>
 
                 <div class="thumbs">
                     <div class="prev" @click="previousSlide()"></div>
                     <div class="next" @click="nextSlide()"></div>
                     <div class="thumb">
-                        <img v-for="(slide, index) in slides" :src="slide.image" alt="thumbnails" 
-                        >
+                        <img v-for="(slide, index) in slides" :src="slide.image" alt="thumbnails"
+                        :class="(index === activeIndex) ? 'active' : '' ">
                     </div>
                     <!-- <div class="thumb active">
                         <img src="img/01.webp" alt="Svezia" />
