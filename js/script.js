@@ -4,6 +4,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            interval: null,
             activeIndex : 0,
             slides : [
                 {
@@ -44,20 +45,24 @@ createApp({
                 this.activeIndex = this.slides.length - 1;
             }
         },
-        sameSlide(){
-            
+        goToSlide(index){
+            this.activeIndex = index;
         },
-        pauseSlide(){
+        pauseSlider(){
+            clearInterval(this.interval);
 
+        },
+        startSlider(){
+            this.interval = setInterval(() => {
+                this.activeIndex++;
+                if (this.activeIndex >= this.slides.length){
+                    this.activeIndex = 0;
+                }
+            }, 3000);
         }
     },
     created(){
-        const clock = setInterval(() => {
-            this.activeIndex++;
-            if (this.activeIndex >= this.slides.length){
-                this.activeIndex = 0;
-            }
-        }, 3000);
+        this.startSlider()
 
 
     }
